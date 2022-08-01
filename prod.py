@@ -11,7 +11,10 @@ def ShopOLAP(N,items):
         for j in items:
             if item in j:
                 l = j.split(" ")
-                num = num + int(l[1])
+                try:
+                    num = num + int(l[1])
+                except OverflowError:
+                    print("Result is too big!")
                 items.pop(items.index(j))
         result.append(item + " " + str(num))
     result.sort()
