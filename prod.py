@@ -3,10 +3,10 @@ def ShopOLAP(N,items):
     for i in range(len(items)):
         if len(items) == 0:
             break
-        num = 0
         lst = items[0].split(" ")
         items.pop(0)
         item = lst[0]
+        num = 0
         num = num + int(lst[1])
         for j in items:
             if item in j:
