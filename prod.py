@@ -1,5 +1,5 @@
 def ShopOLAP(N,items):
-    result = []
+    
     for i in range(len(items)):
         if len(items) == 0:
             break
@@ -10,12 +10,13 @@ def ShopOLAP(N,items):
         num = num + int(lst[1])
         for j in items:
             if item in j:
-                l = j.split(" ")
+                const = j.split(" ") # l - const
                 try:
-                    num = num + int(l[1])
+                    num = num + int(const[1])
                 except OverflowError:
                     print("Result is too big!")
                 items.pop(items.index(j))
+        result = []
         result.append(item + " " + str(num))
     result.sort()
     return result
